@@ -32,7 +32,8 @@ gulp.task('server:build', () => {
 gulp.task('client', ['client:build']);
 
 gulp.task('client:watch', ['client:build'], () => {
-  // todo
+  gulp.watch(['client/src/**/*.js', 'client/src/**/*.html'], ['client:js']);
+  return gulp.watch(['client/src/**/*.css'], ['client:css']);
 });
 
 gulp.task('client:build', ['client:js', 'client:css']);
